@@ -9,14 +9,20 @@ Playwright automation project for https://www.demoblaze.com/index.html
 
 ### Testing
 ```sh
-# Install dependencies
-npm init
+# To install project dependencies run:
+npm install
+```
+
+```sh
+# To install playwright run:
+npx playwright install
 ```
 
 ```sh
 # To all the tests run:
 npx playwright test
 ```
+
 ```sh
 # To log in scenario run:
 npx playwright test -g '@verifyLogin'
