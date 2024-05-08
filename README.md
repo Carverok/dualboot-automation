@@ -8,6 +8,7 @@ Automation project with Playwright framework
 - Debian 11, Debian 12, Ubuntu 20.04 or Ubuntu 22.04, with x86-64 or arm64 architecture.
 
 ### Testing
+```sh
 # Install dependencies
 npm init
 
@@ -25,3 +26,4 @@ npx playwright test -g '@verifyCategories'
 
 # Run verify log in error scenario
 npx playwright test -g '@verifyLoginError'
+```
