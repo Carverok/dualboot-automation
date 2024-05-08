@@ -1,5 +1,5 @@
 # dualboot-automation
-Automation project with Playwright framework
+Playwright automation project for https://www.demoblaze.com/index.html
 
 ## System requirements
 - Node.js 18+
@@ -11,19 +11,33 @@ Automation project with Playwright framework
 ```sh
 # Install dependencies
 npm init
+```
 
-# Run all the tests
+```sh
+# To all the tests run:
 npx playwright test
-
-# Run log in scenario
+```
+```sh
+# To log in scenario run:
 npx playwright test -g '@verifyLogin'
+```
 
-# Run purchase a product scenario
+```sh
+# To purchase a product scenario run:
 npx playwright test -g '@purchaseProduct'
+```
 
-# Run verify categories scenario
+```sh
+# To verify categories scenario run:
 npx playwright test -g '@verifyCategories'
+```
 
-# Run verify log in error scenario
+```sh
+# To verify log in error scenario run:
 npx playwright test -g '@verifyLoginError'
+```
+
+```sh
+# To open last HTML report run:
+npx playwright show-report
 ```
