@@ -19,7 +19,7 @@ npx playwright install
 ```
 
 ```sh
-# To all the tests run:
+# To execute all the tests run:
 npx playwright test
 ```
 
