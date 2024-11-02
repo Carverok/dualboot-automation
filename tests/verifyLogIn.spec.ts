@@ -1,20 +1,28 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'; // Import necessary testing utilities from Playwright
+import { LoginHelper } from '../helpers/LoginHelper'; // Import the LoginHelper class for handling login/logout operations
 
-test('Verify log in @verifyLogin', async ({ page }) => {
+// Before each test runs, perform the login action
+test.beforeEach(async ({ page }) => {
+  const loginHelper = new LoginHelper(page, 'admin', 'admin'); // Create an instance of LoginHelper with admin credentials
+  await loginHelper.login(); // Call the login method to log in the user
+});
 
+// After each test runs, perform the logout action
+test.afterEach(async ({ page }) => {
+  const loginHelper = new LoginHelper(page, 'admin', 'admin'); // Reuse the LoginHelper instance for logging out
+  await loginHelper.logout(); // Call the logout method to log out the user
+});
+
+// Test case to verify successful login for an admin user
+test('@verifyLogIn', async ({ page }) => {
+  // Add an annotation for test metadata including a description of the test
   test.info().annotations.push(({
     type: 'Test',
-    description: 'This test verifies a success login process for an admin user on DemoBlaze'
+    description: 'This test aims to verify a successful login process for an admin user on DemoBlaze'
   }));
   
-  await page.goto('https://www.demoblaze.com/');
-  await page.getByRole('link', { name: 'Log in' }).click();
-  await page.locator('#loginusername').click();
-  await page.locator('#loginusername').fill('admin');
-  await page.locator('#loginpassword').click();
-  await page.locator('#loginpassword').fill('admin');
-  await page.getByRole('button', { name: 'Log in' }).click();
-
-  const wellcomeMessage = page.locator('#nameofuser');
-  await expect(wellcomeMessage).toHaveText('Welcome admin');
+  // Locate the welcome message element that displays the username
+  const wellcomeMessage = page.locator('#nameofuser'); // Get the locator for the welcome message element
+  // Assert that the welcome message contains the expected text indicating successful login
+  await expect(wellcomeMessage).toHaveText('Welcome admin'); // Check that the text matches 'Welcome admin'
 });
