@@ -24,39 +24,34 @@ npm install
 ```
 
 ```sh
-# To install playwright run:
-npx playwright install
-```
-
-```sh
-# To execute all the tests run:
-npx playwright test
+# # To execute all the tests run:
+npm test
 ```
 
 ### Running scenarios
 ```sh
 # To log in scenario run:
-npx playwright test -g '@verifyLogIn'
+npm run test:login
 ```
 
 ```sh
 # To purchase a product scenario run:
-npx playwright test -g '@purchaseProduct'
+npm run test:purchase
 ```
 
 ```sh
 # To verify categories scenario run:
-npx playwright test -g '@verifyCategories'
+npm run test:categoires
 ```
 
 ```sh
 # To verify log in error scenario run:
-npx playwright test -g '@verifyUnexistingUser'
+npm run test:unexistinguser
 ```
 
 ```sh
 # To open last HTML report run:
-npx playwright show-report
+npm run report
 ```
 
 ## Customizing the Report in Playwright

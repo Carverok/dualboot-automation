@@ -2,7 +2,15 @@
   "name": "dualboot-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "playwright install",
+    "test": "playwright test",
+    "test:login": "playwright test tests/verifyLogin.spec.ts",
+    "test:purchase": "playwright test tests/purchaseProduct.spec.ts",
+    "test:categoires": "playwright test tests/verifyCategories.spec.ts",
+    "test:unexistinguser": "playwright test verifyUnexistingUser.spec.ts",
+    "report": "playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
